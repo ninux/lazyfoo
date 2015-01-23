@@ -36,6 +36,7 @@ int main(char argc, char **argv)
 		}
 	}
 
+	free(bg_color);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 
