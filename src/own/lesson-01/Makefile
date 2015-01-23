@@ -1,4 +1,4 @@
-OBJS = main.c
+OBJS = main.c color.c
 CC = gcc
 C_FLAGS = -w
 L_FLAGS = -lSDL2

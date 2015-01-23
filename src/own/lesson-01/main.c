@@ -2,16 +2,17 @@
 #include <stdio.h>
 #include "settings.h"
 #include "color.h"
+#include "debug.h"
 
 int main(char argc, char **argv)
 {
 	SDL_Window *window = NULL;
 	SDL_Surface *screen_surface = NULL;
-	struct RGB_COLOR bg_color;
+	RGB_COLOR *bg_color;
 
-	bg_color.RED = 0x55;
-	bg_color.GREEN	= 0x55;
-	bg_color.BLUE = 0x55;
+	dbgmsg("initializing colors");
+
+	bg_color = create_color(0x55, 0x66, 0x77);
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("SDL could not initialize! SDL_Error: %s\n",
@@ -30,9 +31,9 @@ int main(char argc, char **argv)
 			screen_surface = SDL_GetWindowSurface(window);
 			SDL_FillRect(screen_surface, NULL,
 				     SDL_MapRGB(screen_surface->format,
-						bg_color.RED,
-						bg_color.GREEN,
-						bg_color.BLUE));
+						bg_color->RED,
+						bg_color->GREEN,
+						bg_color->BLUE));
 			SDL_UpdateWindowSurface(window);
 			SDL_Delay(TIMEOUT);
 		}
