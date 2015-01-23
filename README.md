@@ -24,3 +24,8 @@ split the source directory into two parts. One part will only contain the
 code I used (more or less) as-is from the *Lazy Foo Productions* tutorial.
 This will be placed at `lazyfoo/src/ext`. The code I made by my own, based
 upon the tutorial progress, will be placed at `lazyfoo/src/own`.
+
+## Quicklinks
+* [Notes](./notes.md)
+* [Progress](./progress.md)
+
