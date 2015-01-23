@@ -3,6 +3,7 @@
 #include "settings.h"
 #include "color.h"
 #include "debug.h"
+#include "error.h"
 
 int main(char argc, char **argv)
 {
@@ -10,13 +11,10 @@ int main(char argc, char **argv)
 	SDL_Surface *screen_surface = NULL;
 	RGB_COLOR *bg_color;
 
-	dbgmsg("initializing colors");
-
 	bg_color = create_color(0x55, 0x66, 0x77);
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-		printf("SDL could not initialize! SDL_Error: %s\n",
-		       SDL_GetError());
+		print_sdl_error();
 	} else {
 		window = SDL_CreateWindow("ninux does SDL",
 					  SDL_WINDOWPOS_UNDEFINED,
@@ -25,8 +23,7 @@ int main(char argc, char **argv)
 					  SCREEN_HEIGHT,
 					  SDL_WINDOW_SHOWN);
 		if (window == NULL) {
-			printf("Window could not be created! SDL_Error: %s\n",
-			       SDL_GetError());
+			print_sdl_error();
 		} else {
 			screen_surface = SDL_GetWindowSurface(window);
 			SDL_FillRect(screen_surface, NULL,
