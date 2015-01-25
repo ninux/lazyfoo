@@ -11,7 +11,7 @@
 SDL_Window *window = NULL;
 SDL_Surface *surface = NULL;
 SDL_Surface *image = NULL;
-char bitmap[] = "../../../media/fig/eye.png";
+char bitmap[] = FIGURE_DIR"/eye.png";
 char title[] = "bitmaps";
 
 int main(char argc, char **argv)
