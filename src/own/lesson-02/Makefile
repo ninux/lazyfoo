@@ -1,7 +1,7 @@
 OBJS = main.c color.c sdladdon.c
 CC = g++
 C_FLAGS = -w
-L_FLAGS = -lSDL2
+L_FLAGS = -lSDL2 -lSDL2_image
 OBJ_NAME = image.o
 
 all: $(OBJS)

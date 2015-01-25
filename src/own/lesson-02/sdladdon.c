@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
+#include <SDL2/SDL_image.h>
 #include "sdladdon.h"
 #include "debug.h"
 #include "error.h"
@@ -38,7 +39,7 @@ bool load_bitmap(SDL_Surface **surface, char *filename)
 {
 	bool success = true;
 
-	*surface = SDL_LoadBMP(filename);
+	*surface = IMG_Load(filename);
 	if (*surface == NULL) {
 		print_sdl_error();
 		success = false;

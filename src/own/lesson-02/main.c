@@ -11,7 +11,7 @@
 SDL_Window *window = NULL;
 SDL_Surface *surface = NULL;
 SDL_Surface *image = NULL;
-char bitmap[] = "hello_world.bmp";
+char bitmap[] = "../../../media/fig/eye.png";
 char title[] = "bitmaps";
 
 int main(char argc, char **argv)
@@ -19,13 +19,6 @@ int main(char argc, char **argv)
 	if (!init(&window, &surface, title)) {
 		printf("Failed to initialize!\n");
 		return -1;
-	}
-
-	if (window == NULL) {
-		printf("ERROR: window is null!\n");
-	}
-	if (surface == NULL) {
-		printf("ERROR: surface is null!\n");
 	}
 
 	if (!load_bitmap(&image, bitmap)) {
