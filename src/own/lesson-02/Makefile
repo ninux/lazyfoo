@@ -1,5 +1,5 @@
 OBJS = main.c color.c sdladdon.c
-CC = gcc
+CC = g++
 C_FLAGS = -w
 L_FLAGS = -lSDL2
 OBJ_NAME = image.o
