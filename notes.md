@@ -14,6 +14,9 @@ instead of
 ```
 
 ## Window appears tranparent
-The window appears tranparent after the first run of the program.
+The window won't update as it should. The bug seems to be either at awesome or at X11.
+Forcing a delay (with `SDL_Delay()`) of about 100ms is a possible workaround.
 
-I think this could be an issue caused by *awesome WM* but this is just a guess. 
+### Some links to this issue
+* [Awesome user report](https://awesome.naquadah.org/bugs/index.php?do=details&task_id=1167)
+* [Bugzilla report](https://bugzilla.libsdl.org/show_bug.cgi?id=1948)
