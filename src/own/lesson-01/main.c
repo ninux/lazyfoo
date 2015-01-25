@@ -11,9 +11,9 @@ int main(char argc, char **argv)
 	SDL_Surface *screen_surface = NULL;
 	RGB_COLOR *bg_color;
 
-	bg_color = create_color(0x55, 0x66, 0x77);
+	bg_color = create_color(0x55, 0x55, 0x55);
 
-	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		print_sdl_error();
 	} else {
 		window = SDL_CreateWindow("ninux does SDL",
@@ -31,6 +31,7 @@ int main(char argc, char **argv)
 						bg_color->RED,
 						bg_color->GREEN,
 						bg_color->BLUE));
+			SDL_Delay(500); // why won't it fill without this line?
 			SDL_UpdateWindowSurface(window);
 			SDL_Delay(TIMEOUT);
 		}
